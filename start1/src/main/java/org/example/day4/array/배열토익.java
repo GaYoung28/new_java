@@ -56,11 +56,11 @@ public class 배열토익 {
         //   합계 143
         //   평균 47.666666667
 
-       /* Scanner sc = new Scanner(System.in);
+       Scanner sc = new Scanner(System.in);
         int[] a = new int[3];
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("숫자 입력 : ");
-             = sc.nextInt();
+            int i = sc.nextInt();
         }
 
 
@@ -110,7 +110,9 @@ public class 배열토익 {
         if (a == 3) {
             System.out.println("비행기");
         }
-        System.out.println("당신이 가고싶은 곳인" + a );
+        System.out.println("당신이 가고싶은 곳인" + a);
+
+
 
 
 
@@ -137,18 +139,23 @@ public class 배열토익 {
                 count5++;
             }
             if (69 < n2[i] && n2[i] < 80) {
-            if ()
+                count6++;
+            }
+
+            if (n2[i] < 49) {
+                count7++;
+            }
 
         }
 
+
         System.out.println(count4);
         System.out.println(count5);
-
-
-
-
+        System.out.println(count6);
+        System.out.println(count7);
 
 
     }
+    }
 
-}
+
