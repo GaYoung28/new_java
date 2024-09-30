@@ -67,12 +67,16 @@ public class Array3 {
 
         //Q1- Array
         // 1.
+        int[]x = new int[20];
         Random r = new Random();
-        for(int i = 1; i < 100; i++) {
-            int num = r.nextInt(20);
-
-
+        for(int i = 0; i < x.length; i++){
+            x[i] = r.nextInt(100);
         }
+        System.out.println("배열 프린트 : " + Arrays.toString(x));
+
+        //2.
+
+
         //System.out.println("배열 프린트: " + Arrays.toString(c));
 
         // 2.

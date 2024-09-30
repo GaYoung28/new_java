@@ -51,6 +51,7 @@ public class 배열패턴 {
                 break; //반복문의 break!
             }
 
+
         }
     }
 }

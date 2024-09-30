@@ -2,7 +2,7 @@ package org.example.day2.control;
 
 public class 조건문if2 {
     public static void main(String[] args) {
-       int hour = 16;
+       int hour = 18;
        while (true) {
            if (hour < 11) {
                System.out.println("아직 멀었구나.");

@@ -1,0 +1,16 @@
+
+< 명령어 >
+Arrays to string -> 비파괴메서드 (원본 파괴 X)
+Arrays.sort (오름차순 정렬) -> 파괴메서드 (원본 파괴)
+
+< Scanner >
+System.in --> 키보드로 입력 받
+Scanner는 입력용 stream , 통로 -> stream 은 닫아줘야함 --> sc.close()
+
+< 배열 최댓값 찾기 >
+1) 오름차순 정렬 후 맨앞 최솟값, 맨끝 최댓값
+2)
+
+
+한줄 복사 : ctrl+d
+한줄 삭제 : ctrl+y
