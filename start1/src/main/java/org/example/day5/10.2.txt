@@ -1,0 +1,79 @@
+<day5.review>
+ : 문제 5개 ->  'day4.array.배열문제' 에서의 문제와 같음
+
+
+* 변수
+참조용 변수 : 배열같이 주소가 정해지는, 일반적으로 4byte
+
+
+
+* for 문
+c타입의 for문 : i를 이용가능, 입력/출력 가능, 여러개의 배열을 다룰 때
+for - each문 : 간단, i 사용 x, 출력만 가능, 하나의 배열을 다룰 때
+
+
+
+*형변환
+//연산시 하나라도 실수이면 결과는 실수이다
+sum/(double)data.length
+(double)sum/data.length
+(double)sum/(double)data.length
+-> 3가지 다 가능 (하나라도 실수이니까)
+
+sum/((double)data.length)
+(double)(sum/data.length)
+-> 불가능 ( 괄호 우선순위 때문)
+
+
+
+*초기화
+String은 기본형 아니므로 초기화할 때 String a = null; 로 나타냄
+""로 초기화하는건 뭐지?
+
+
+
+* 조건문
+조건이 ~보다 크다 와 같이 부등호가 들어가면 case문은 못씀.
+if 문 쓸때는 더 좁은 범위가 먼저 나오게 써야함.
+
+
+
+*string 처리방법
+replace
+:  램에 있는 데이터를 가져다가 cpu가 변경, ram은 변경되지 않았음,
+   변경하려면 수동으로 ram에 넣어주어야 함.
+
+trim
+: 공백 자르기
+
+split
+: string 분리
+
+toCharArray
+: char 형태로 분리
+
+.equals()
+: 기본형 아닌것(String)을 비교할 때 값 같니? -> true/false
+
+
+
+* stringBuilder
+String s - new String();
+String s = "감자";
+system.out.println(s); //감자
+
+StringBuilder sb = new StringBuilder();
+sb ==> 주소가 프린트!
+sb.toString(); //sb가 가리키고 있는 데이터를 String으로 만들어달라!
+
+
+
+* 기본형복사와 참조형복사
+기본형복사 - cpu가 변수에 들어있는 데이터를 다른 변수에 복사하여 대입
+참조형복사 - 배열은 주소가 복사되므로 복사해도 값이 바뀜
+         ==> 기본형처럼 참조형을 복사하면 안됨.
+         ==> 배열은 깊은복사(주소가 가리키는 값목록을 복사) 사용
+
+
+
+
