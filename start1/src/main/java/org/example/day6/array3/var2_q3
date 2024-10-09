@@ -1,0 +1,115 @@
+package com.example.var2;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.concurrent.Flow;
+
+public class var2_q3 {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        frame.setSize(270,400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //JLabel 4개, JTextFieldd 4개, JButton 3개
+
+        JLabel food = new JLabel();
+        food.setText("먹고 싶은 음식");
+        Font font = new Font("굴림",Font.BOLD,15);
+        food.setFont(font);
+
+        JLabel age = new JLabel();
+        age.setText("당신의 나이는");
+        age.setFont(font);
+
+        JLabel korean = new JLabel();
+        korean.setText("국어 점수");
+        korean.setFont(font);
+
+        JLabel math = new JLabel();
+        math.setText("수학 점수");
+        math.setFont(font);
+
+        JTextField food2 = new JTextField(10);
+        JTextField age2 = new JTextField(10);
+        JTextField korean2 = new JTextField(10);
+        JTextField math2 = new JTextField(10);
+        food2.setFont(font);
+        age2.setFont(font);
+        korean2.setFont(font);
+        math2.setFont(font);
+
+        JButton place = new JButton();
+        place.setText("어디로 갈까?");
+        Font font2 = new Font("굴림",Font.BOLD,20);
+        place.setFont(font2);
+
+        JButton nextAge = new JButton();
+        nextAge.setText("나의 내년 나이는?");
+        nextAge.setFont(font2);
+
+        JButton avg = new JButton();
+        avg.setText("두 과목 점수의 평균은?");
+        avg.setFont(font2);
+
+        FlowLayout flowLayout = new FlowLayout();
+        frame.setLayout(flowLayout);
+
+        frame.getContentPane().setBackground(Color.PINK);
+
+        frame.add(food);
+        frame.add(food2);
+        frame.add(place);
+        frame.add(age);
+        frame.add(age2);
+        frame.add(nextAge);
+        frame.add(korean);
+        frame.add(korean2);
+        frame.add(math);
+        frame.add(math2);
+        frame.add(avg);
+
+        place.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String food3 = food2.getText(); //food2에 입력한 값을 가지고 와주는 함수 필요
+                //food2는 JTextField 객체이고, 이를 문자열과 비교하면 X
+                // JTextField에서 값을 가져오려면 getText() 메서드를 사용해야 합
+
+                if (food3.equals("아메리카노")) {
+                    JOptionPane.showMessageDialog(frame,"카페로 가세요.");
+                }
+                else {
+                    JOptionPane.showMessageDialog(frame,"그러면 물을 마셔요.");
+                }
+            }
+        });
+
+        nextAge.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String age3 = age2.getText();
+                int ageInt = Integer.parseInt(age3);
+                int age4 = ageInt + 1;
+                JOptionPane.showMessageDialog(frame,"당신은 내년에 " + age4 + "살이 됩니다.");
+            }
+        });
+
+        avg.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String korean3 = korean2.getText();
+                String math3 = math2.getText();
+                int koreanInt = Integer.parseInt(korean3);
+                int mathInt = Integer.parseInt(math3);
+
+                double avg2 = (koreanInt + mathInt) / 2.0 ;
+                JOptionPane.showMessageDialog(frame,"평균 점수는 " + avg2 +"입니다.");
+
+            }
+        });
+
+        frame.setVisible(true);
+    }
+}
