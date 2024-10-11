@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class 일기쓰기화면 {
-    public static void main(String[] args){
+    public void open() { //일기쓰기 화면은 띄어주기만 하면 되니까 main 필요없음.
         JFrame frame = new JFrame();
         frame.setSize(400, 350);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

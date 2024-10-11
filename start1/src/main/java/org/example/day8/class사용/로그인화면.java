@@ -87,6 +87,9 @@ public class 로그인화면 {
                         // == 을 쓰면 주소값을 가져옴 .equals로 표시
                         //JOptionPane.showMessageDialog(frame, "로그인 성공!");
                         frame.setTitle("로그인 성공!");
+                        //일기쓰기 화면이 보이게 하자.
+                        일기쓰기화면 diary = new 일기쓰기화면();
+                        diary.open();
                     } else {
                         frame.setTitle("로그인 실패!");
                         //JOptionPane.showMessageDialog(frame, "로그인 실패!");
