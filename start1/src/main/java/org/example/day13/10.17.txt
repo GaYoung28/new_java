@@ -1,0 +1,7 @@
+Car <---- Truck
+Car <---- Taxi
+큰 <- 작
+
+Car c = new Truck(); //큰 <- 작 (o)
+Truck t = new Car(); //작 <- 큰 (x)
+Truck t2 = new Taxi();

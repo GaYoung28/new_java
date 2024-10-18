@@ -1,4 +1,4 @@
-package org.example.quiz.inherit.q1;
+package org.example.quiz.inherit2.q1;
 
 public class Vehicle {
     private String brand;

@@ -1,4 +1,4 @@
-package org.example.day8.class사용;
+package org.example.day7.class사용;
 
 import javax.swing.*;
 import java.awt.*;

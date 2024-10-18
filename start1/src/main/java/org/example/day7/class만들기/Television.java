@@ -26,7 +26,4 @@ public class Television {
     public void changeCh() {
         System.out.println("채널을 바꿨다.....");
     }
-
-
-
 }
