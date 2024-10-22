@@ -1,0 +1,29 @@
+Object[] list = new Object[3]; //{null,null,null}
+list[0] = 100; // int --> Integer --> Object
+list[1] = "홍";
+list[2] = new Date();
+
+1. 형변환(캐스팅)이란?
+2. 업 캐스팅이란? 다른 말은?
+3. 다운 캐스팅이란? 다른 말은?
+4. Car ← Truck에서 부모 클래스/자식 클래스를 구분하시오.
+5. byte b = 100; int i = b; 내부에서 일어난 처리 내용을 쓰시오.
+6. int i2 = 10; byte b2 = (byte) i2; 내부에서 일어난 처리 내용을 쓰시오.
+7. 오토박싱이란 ?
+8. 오토언박싱이란 ?
+9. 다음 각 줄에 주석을 달아주세요.
+ArrayList list = new ArrayList();
+list.add(100);
+int age = (Integer)list.get(0);
+
+
+<Collection>
+- List : 순서가 있는 데이터의 집합 , 데이터의 중복 허용
+  ====> ArrayList : 중간에 삽입하면 뒤에 값 전체 밀림 -> 파괴함수
+
+- Queue : List + FIFO (먼저 들어간 데이터가 먼저 삭제)
+ =====> LinkedList : 맨 앞에 있는 요소가 먼저 삭제
+
+- Set : 순서 X, 인덱스로 접근 X, 중복허용 X
+
+- Map : 중복 x, 인덱스로 접근 x
