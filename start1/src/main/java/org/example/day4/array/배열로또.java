@@ -12,7 +12,6 @@ public class 배열로또 {
         Random r = new Random(42);
         for (int i = 0; i < lotto.length; i++) {
             lotto[i] = r.nextInt(45) + 1; //0~44 ==> 1 ~ 45
-
         }
         System.out.println(Arrays.toString(lotto));
 
