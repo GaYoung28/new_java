@@ -59,13 +59,13 @@ public class 스트림문제2 {
         //   List<String>으로 모은 후 list를 출력
 
         String[] place = {"북한산", "한라산", "제주도", "독도", "울릉도"};
-        //String place2 = Arrays.stream(place).map(x -> x.endsWith("산")).peek(a -> System.out.println(a)).toString();
-        String place2 = Arrays.stream(place).map(x -> x.endsWith("산")).toString();
-        System.out.println(place2);
-        List<String> list2 = Arrays.asList(place2);
+        List<String> list2 = Arrays.stream(place)
+                .filter(x -> x.endsWith("산"))
+                .peek(System.out::println)
+                .collect(Collectors.toList());
 
-        // System.out.println(place2);
-        // System.out.println(list2);
+        System.out.println(list2);
+
 
 
         System.out.println("------------------------------------");
@@ -75,20 +75,20 @@ public class 스트림문제2 {
         //   최대값, 최소값, 합계, 평균을 구하시오.
 
         List<Double> list3 = Arrays.asList(11.1, 22.2, 33.3, 44.4, 55.5);
-        double max2 = list3.stream().mapToDouble((Double::valueOf)).max().orElse(0.0);
+        double max2 = list3.stream().mapToDouble((Double::doubleValue)).max().orElse(0.0);
         System.out.println(max2);
-        //OptionalDouble max2 = list3.stream().mapToDouble(Double::valueOf).max();
+        //OptionalDouble max2 = list3.stream().mapToDouble(Double::doubleValue).max();
         //System.out.println(max2.getAsDouble());
 
-        double min2 = list3.stream().mapToDouble(Double::valueOf).min().orElse(0.0);
+        double min2 = list3.stream().mapToDouble(Double::doubleValue).min().orElse(0.0);
         System.out.println(min2);
-        //OptionalDouble min2 = list3.stream().mapToDouble(Double::valueOf).min();
+        //OptionalDouble min2 = list3.stream().mapToDouble(Double::doubleValue).min();
         //System.out.println(min2.getAsDouble());
 
-        double sum2 = list3.stream().mapToDouble(Double::valueOf).sum();
+        double sum2 = list3.stream().mapToDouble(Double::doubleValue).sum();
         System.out.println(sum2);
 
-        double avg3 = list3.stream().mapToDouble(Double::valueOf).average().orElse(0.0);
+        double avg3 = list3.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
         System.out.println(avg3);
 
 
@@ -102,8 +102,9 @@ public class 스트림문제2 {
 
         List<Integer> list4 = Arrays.asList(55, 66, 88, 99, 99, 55, 100);
         int min3 = list4.stream()
+                .distinct().sorted()
                 .mapToInt(Integer::intValue)
-                .distinct().sorted().min().orElse(0);
+                .min().orElse(0);
         System.out.println(min3);
 
     }
