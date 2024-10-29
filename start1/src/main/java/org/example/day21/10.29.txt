@@ -1,0 +1,7 @@
+개수셀 때,
+—-----------
+1) 배열(array) - length, 배열의 개수
+   배열명.length
+2) collection(list, set,...) -
+   컬렉션객체명.size()
+3) 문자열(String) - 문자열변수. length()

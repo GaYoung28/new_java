@@ -59,12 +59,12 @@ public class 스트림문제2 {
         //   List<String>으로 모은 후 list를 출력
 
         String[] place = {"북한산", "한라산", "제주도", "독도", "울릉도"};
-        List<String> list2 = Arrays.stream(place)
-                .filter(x -> x.endsWith("산"))
-                .peek(System.out::println)
-                .collect(Collectors.toList());
-
-        System.out.println(list2);
+////        List<String> list2 = Arrays.stream(place)
+////                .filter(x -> x.endsWith("산"))
+////                .peek(System.out::println)
+//////                .collect(Collectors.toList());
+//
+//        System.out.println(list2);
 
 
 
