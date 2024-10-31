@@ -11,4 +11,5 @@ public interface TestInterface {
     //검증해야해, 입력은 시간과 분을 입력해야해, 리턴은 잘되었는지 논리형으로 리턴해야해.
     public abstract boolean result(int hour, int min);
     //인터페이스는 추상메서드로만 만든다.! 기능중심으로 해서 설계 , 필드는 들어가지 않는다!
+    //인터페이스에 상수는 들어갈 수 있음 -> final 붙여서 가능 / 일반 변수는 사용 불가
 }

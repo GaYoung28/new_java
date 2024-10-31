@@ -1,8 +1,9 @@
 package org.example.day21.문제풀이;
 
+import org.example.ArrPrint;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class 문제 {
@@ -74,12 +75,21 @@ public class 문제 {
         //5. int[] s5 = {55, 100, 77, 88, 22}를 정렬 후 역순으로 int[] s6에 옮겨 프린트
         int[] s5 = {55, 100, 77, 88, 22};
         Arrays.sort(s5);
-        List<Integer> list5 = new ArrayList<>();
-        for(int x : s5) {
-            list5.add(x);
+
+        int[] s6 = new int[s5.length];
+        int j = s5.length - 1; //마지막 인덱스
+        for (int i = 0; i < s5.length; i++){
+            s6[j] = s5[i];
+            j--;
         }
-        Collections.reverse(list5);
-        System.out.println(list5);
+        ArrPrint.print(s6);
+
+//        List<Integer> list5 = new ArrayList<>();
+//        for(int x : s5) {
+//            list5.add(x);
+//        }
+//        Collections.reverse(list5);
+//        System.out.println(list5);
 
 
 
