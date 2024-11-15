@@ -26,6 +26,5 @@ public class MemberInsertUI2 {
         vo.setName(name값);
         vo.setTel(tel값);
         dao.insert(vo);
-
     }
 }
