@@ -1,4 +1,4 @@
-package org.example.jdbc2;
+package org.example.dbcp;
 
 import java.util.Scanner;
 
@@ -18,9 +18,9 @@ public class MemberInsertUI2 {
         //Member테이블에 연결해서 입력받은 데이터를 주고 insert해달라고 부르자.(호출하자)
         //MemberDAO클래스 사용해서 insert()호출!
 
-        MemberDAO2_ dao = new MemberDAO2_();
+        MemberDAO2 dao = new MemberDAO2();
         //가방만들기 -> 넣기 -> 전달
-        MemberVO_ vo = new MemberVO_();
+        MemberVO vo = new MemberVO();
         vo.setId(id값);
         vo.setPw(pw값);
         vo.setName(name값);

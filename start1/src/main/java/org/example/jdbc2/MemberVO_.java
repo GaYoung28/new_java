@@ -1,6 +1,6 @@
 package org.example.jdbc2;
 
-public class MemberVO {
+public class MemberVO_ {
     // 가방에 들어갈 데이터 공간을 할당(member 테이블의 컬럼명과 동일)
     private String id;
     private String pw;

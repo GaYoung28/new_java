@@ -17,5 +17,4 @@ public class DeptOneUI {
         JOptionPane.showMessageDialog(null, total);
         sc.close();
     }
-
 }
