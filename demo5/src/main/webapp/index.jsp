@@ -12,7 +12,7 @@
 <a href = "number.jsp">숫자계산 페이지로</a>
 <a href = "life">서블릿 생명주기 확인</a>
 <a href = "login2.jsp">서블릿 한글처리</a>
-<a href = "city.jsp">Q2</a>
+<a href = "city.jsp">City</a>
 <a href = "game.jsp">Game Form</a>
 
 
