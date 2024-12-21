@@ -3,6 +3,7 @@
 <head>
     <title>Title</title>
     <script>
+        //자바 스크립트로 GET 요청
         function btnClick(){
             //입력한 값을 가지고 와서
             let gameName = document.getElementById("gameName").value;
@@ -27,7 +28,6 @@
 <br/>
 <h1><%= "자바 스크립트로 GET 요청" %>
 </h1>
-
 gameName: <input type="text" id="gameName" value="스마일게임"><br>
 gameType: <input type="text" id="gameType" value="멀티롤"><br>
 <button onclick="btnClick()" type="button">자바 스크립트로 GET 요청</button>
@@ -39,12 +39,10 @@ gameType: <input type="text" id="gameType" value="멀티롤"><br>
 <%--</form>--%>
 
 <hr color="blue">
-
 <form  action="player" method="post">
     Player Name: <input name="name" value="킹"><br>
     Player Score: <input name="score" value="300"><br>
     <button type="submit">폼으로 POST요청</button>
 </form>
-
 </body>
 </html>
