@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -21,3 +22,27 @@
 </form>
 </body>
 </html>
+=======
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<%-- action은 서버에서 받을 주소 --%>
+<%-- method는 생략하면 get방식으로 설정됨. --%>
+<%-- 서버에서는 action에서 적은 주소와 method의 방법에 따라 처리할 수 있는 함수를 호출 --%>
+<h1><%= "Enter City Information" %></h1>
+<a href="city2?name=busan&population=5000">busan</a>
+<hr color="red">
+<form  action="city2" method="post">
+    City Name: <input name="name" value="ulsan"><br>
+    City Population: <input name="population" value="3000"><br>
+    <button type="submit">Submit</button>
+</form>
+
+
+
+</body>
+</html>
+>>>>>>> 8590881171e41f9373d79e43e40bf499618b9c5f
