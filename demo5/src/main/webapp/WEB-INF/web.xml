@@ -3,6 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <listener>
+        <listener-class>org.example.demo5.AppContextListener</listener-class>
+    </listener>
+    <filter>
+        <filter-name>utf8filter</filter-name>
+        <filter-class>org.example.demo5.Utf8Filter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>utf8filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>helloServlet</servlet-name>
         <servlet-class>org.example.demo5.HelloServlet</servlet-class>

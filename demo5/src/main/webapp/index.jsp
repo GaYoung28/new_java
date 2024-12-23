@@ -8,6 +8,9 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
+<a href="cart.jsp">장바구니</a>
+<a href="input.jsp">한글 필터</a>
+<a href="status.jsp">상태정보</a>
 <a href = "login.jsp">로그인 페이지로</a>
 <a href = "number.jsp">숫자계산 페이지로</a>
 <a href = "life">서블릿 생명주기 확인</a>
