@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2315d16-a44d-4076-8774-f2aa58b10b65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo5/BoardController2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo5/CartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo5/DispatcherServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo5/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo5/MemberController2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo5/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/controller.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/board_result.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/member_result.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/product_result.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/demo5-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/demo5-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +214,7 @@
       <workItem from="1734672130059" duration="7548000" />
       <workItem from="1734679714474" duration="5041000" />
       <workItem from="1734912858803" duration="26469000" />
-      <workItem from="1734999366425" duration="13835000" />
+      <workItem from="1734999366425" duration="14939000" />
     </task>
     <servers />
   </component>
