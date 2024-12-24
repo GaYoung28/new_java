@@ -8,6 +8,9 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
+<a href="controller.jsp">프론트컨트롤러(디스패처서블릿)</a>
+<hr color="red">
+
 <a href="cart.jsp">장바구니</a>
 <a href="input.jsp">한글 필터</a>
 <a href="status.jsp">상태정보</a>
