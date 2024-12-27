@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/css/create2.css">
+</head>
+<body>
+<div class="container">
+<table>
+  <tr>
+    <td>
+      <!--전달된 값 출력-->
+      글쓰기 완료됨.<br>
+      <h3 th:text="${boardVO.no}"></h3>
+      <h3 th:text="${boardVO.title}"></h3>
+      <h3 th:text="${boardVO.content}"></h3>
+      <h3 th:text="${boardVO.writer}"></h3>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="/board">
+        <button>게시판 페이지</button>
+      </a>
+    </td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

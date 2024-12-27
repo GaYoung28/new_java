@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>과일 목록</h2>
+<ul>
+    <li th:each="one : ${list}" th:text="${one}"></li>
+</ul>
+
+<p>총 과일 개수: <span th:text="${total}"></span> </p>
+
+
+</body>
+</html>
