@@ -22,8 +22,8 @@ public class MemberService {
     // --> service(login()) --> dao(selectMemberById())
 
 
-    final MemberMapper memberMapper; //200번 (dependency Injection, DI)
-    //PasswordEncoder passwordEncoder;
+    private final MemberMapper memberMapper; //200번 (dependency Injection, DI) --> @Autowired
+    private final PasswordEncoder passwordEncoder; //300 (dependency Injection, DI)
     public boolean login(MemberVO memberVO) {
         //전처리하고
         //dao를 찾아서 --> @Autowired
@@ -39,6 +39,29 @@ public class MemberService {
             return false; //로그인실패
         }
         //후처리
+    }
 
+    public int create2(MemberVO memberVO) {
+        //mapper에게 주고 db처리하자
+        String pw2 = passwordEncoder.encode(memberVO.getPw());
+        memberVO.setPw(pw2);
+        System.out.println("vo에 암호화된 pw >>> " + memberVO.getPw());
+        int result = memberMapper.insertMember(memberVO);
+
+        return result;
+    }
+
+
+    public MemberVO read(String id) {
+        return memberMapper.selectMemberById(id);
+    }
+
+    public int delete(String id) {
+        return memberMapper.deleteMember(id);
+    }
+
+
+    public int update(MemberVO memberVO) {
+        return memberMapper.updateMember(memberVO);
     }
 }
