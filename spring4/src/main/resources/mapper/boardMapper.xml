@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.spring4.board.dao.BoardMapper">
+    <insert id="insertBoard"
+            parameterType="com.example.spring4.board.vo.BoardVO">
+        insert into board (title, content, writer)
+        values (#{title}, #{content}, #{writer})
+    </insert>
+
+    <update id="updateBoard"
+            parameterType="boardVO">
+        update board
+        set title = #{title}, content = #{content}, writer = #{writer}
+        where no = #{no}
+    </update>
+
+    <delete id="deleteBoard"
+            parameterType="int">
+        delete from board
+        where no = #{no}
+    </delete>
+
+    <!-- 게시판 하나 검색 -->
+    <select id="selectBoardByNo"
+            parameterType="int"
+            resultType="com.example.spring4.board.vo.BoardVO">
+        select no,title,content,writer
+        from board
+        where no = #{no}
+        order by no desc
+        <!-- 내림차순으로 정렬해야 최신 게시물이 맨 위로 온다. -->
+    </select>
+
+    <!-- 게시판 목록 검색-->
+    <select id="selectBoardAll"
+            resultType="com.example.spring4.board.vo.BoardVO">
+        select no,title,content,writer from board
+        order by no desc
+    </select>
+
+    <!-- 게시판 내용 조건 검색-->
+    <select id="getBoardByContent"
+            parameterType="String"
+            resultType="com.example.spring4.board.vo.BoardVO">
+        select no,title,content,writer
+        from board
+        where content LIKE('%',#{find},'%')
+    </select>
+</mapper>

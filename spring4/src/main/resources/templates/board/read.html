@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<div layout:fragment="content">
+    <!-- 게시판 작성 폼 -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white text-center">
+                        <h2>게시글 내용</h2>
+                    </div>
+                    <div class="card-body">
+
+                            <div class="mb-3">
+                                <label class="form-label">번호</label>
+                                [[${boardVO.no}]]
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">제목</label>
+                                [[${boardVO.title}]]
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">내용</label>
+                                [[${boardVO.content}]]
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">작성자</label>
+                                [[${boardVO.writer}]]
+                            </div>
+
+                            <div th:if="${session.id != null && session.id == boardVO.writer }" class="d-grid">
+                                <a th:href="@{/board/update(no=${boardVO.no})}" class="btn btn-outline-primary">게시글 수정</a>
+                                <a th:href="@{/board/delete(no=${boardVO.no})}" class="btn btn-outline-primary">게시글 삭제</a>
+                            </div>
+
+                            <div class="d-grid">
+                                <a href="/board/board" class="btn btn-dark">목록으로 돌아가기</a>
+                            </div>
+                        </div></div></div></div></div></div></html>
