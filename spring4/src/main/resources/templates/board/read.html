@@ -1,42 +1,114 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 <div layout:fragment="content">
-    <!-- 게시판 작성 폼 -->
+    <!-- 게시글 읽기 화면 -->
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="col-lg-8 col-md-10 col-sm-12">
                 <div class="card shadow-sm">
                     <div class="card-header bg-success text-white text-center">
-                        <h2>게시글 내용</h2>
+                        <h2 th:text="${boardVO.title}">게시글 제목</h2>
                     </div>
                     <div class="card-body">
-
-                            <div class="mb-3">
-                                <label class="form-label">번호</label>
-                                [[${boardVO.no}]]
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr class="text-center">
+                                <th scope="row" class="bg-light">번호</th>
+                                <td th:text="${boardVO.no}">게시글 번호</td>
+                            </tr>
+                            <tr class="text-center">
+                                <th scope="row" class="bg-light">작성자</th>
+                                <td th:text="${boardVO.writer}">작성자 이름</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bg-light text-center">내용</th>
+                                <td th:text="${boardVO.content}" style="height: 300px; white-space: pre-line;" >게시글 내용</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div th:if="${session.id != null && session.id == boardVO.writer}">
+                            <div class="d-grid mt-4" >
+                                <a th:href="@{/board/update(no=${boardVO.no})}" class="btn btn-outline-success btn-lg">게시글 수정</a>
                             </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">제목</label>
-                                [[${boardVO.title}]]
+                            <div class="d-grid mt-4">
+                                <a th:href="@{/board/delete(no=${boardVO.no})}" class="btn btn-outline-success btn-lg">게시글 삭제</a>
                             </div>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <a href="/board/board" class="btn btn-secondary">목록으로 돌아가기</a>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">내용</label>
-                                [[${boardVO.content}]]
-                            </div>
+                <div class="card shadow-sm" th:if="${session.id != null}">
+                    댓글 작성 폼
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="mb-3">댓글 목록</h5>
+                        <ul class="list-group" id="replyList">
+                            <!-- 댓글 추가시
+                                id가 replyList 아래의 자식으로 추가하기 위해
+                                ul에 id 부여함.
+                             -->
+                            <li class="list-group-item"
+                                th:each="replyVO : ${list}">
+                                <div class="d-flex justify-content-between">
+                                    <strong th:text="${replyVO.writer}">작성자</strong>
+                                    <div th:if="${session.id != null && session.id == replyVO.writer}">
+                                        <button class="btn btn-outline-dark"
+                                                th:data-replyid="${replyVO.id}"
+                                                onclick="updateReply(this)">수정</button>
+                                        <!-- 함수명(this)라고 하면 함수가 불러진 태그객체가 전달됨.
+                                            자바스크립트에서 button 속성값, 텍스트값들을 추출해서 쓸 수 있음 -->
+                                        <button class="btn btn-outline-dark"
+                                                th:data-replyid="${replyVO.id}"
+                                                onclick="deleteReply(this)">삭제</button>
+                                    </div>
+                                    <p class="mt-2" th:text="${replyVO.content}">댓글 내용</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">작성자</label>
-                                [[${boardVO.writer}]]
-                            </div>
+            </div></div></div></div>
+        <th:block layout:fragment="script">
+<!--            자바스크립트 끼워지는 부분-->
+            <script>
+                function postReply() {
+                    alert("댓글달기")
+                }
+                function deleteReply(button) {
+                    const replyId = button.dataset.replyid;
+                    alert("댓글삭제>>> " + replyId)
+                    //댓글 id(replyId)를 가져와서
+                    //서버에 전달해서 reply에서 삭제 처리 (비동기통신)
+                    //ajax (asyn javascript and XML) --> json
+                    // - XMLHttpRequest(XHR)
+                    // - fetch()함수
+                    // - axios객체
+                    axios.delete("/reply/delete/" + replyId)
+                        .then(function (response){
+                            alert(response.status); //응답상태코드값
+                            alert(response.data); //http의 body추출
+                        })
+                        .catch(function (error){
+                            console.log(error);
+                    });
+                    // axios.delete("/reply/delete/" + replyId)
+                    //     .then(응답받아서 처리할 함수)
+                    //     .catch(에러시 처리할 함수);
 
-                            <div th:if="${session.id != null && session.id == boardVO.writer }" class="d-grid">
-                                <a th:href="@{/board/update(no=${boardVO.no})}" class="btn btn-outline-primary">게시글 수정</a>
-                                <a th:href="@{/board/delete(no=${boardVO.no})}" class="btn btn-outline-primary">게시글 삭제</a>
-                            </div>
-
-                            <div class="d-grid">
-                                <a href="/board/board" class="btn btn-dark">목록으로 돌아가기</a>
-                            </div>
-                        </div></div></div></div></div></div></html>
+                    //axios.get(주소만); : get 방식
+                    //axios.post(주소, 전달될 데이터); : post 방식
+                    //전달될 데이터는 string, 배열, json
+                    //성공하면 해당 id를 replyList에서 삭제
+                }
+                function updateReply(button) {
+                    const replyId = button.dataset.replyid;
+                    alert("댓글수정>>> " + replyId)
+                }
+            </script>
+        </th:block>
+</html>

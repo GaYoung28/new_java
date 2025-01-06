@@ -2,6 +2,8 @@ package com.example.spring4.board.controller;
 
 import com.example.spring4.board.service.BoardService;
 import com.example.spring4.board.vo.BoardVO;
+import com.example.spring4.reply.service.ReplyService;
+import com.example.spring4.reply.vo.ReplyVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,7 @@ import java.util.List;
 public class BoardController {
 
     private final BoardService boardService;
+    private final ReplyService replyService;
 
     @GetMapping("board")
     public String board(Model model) {
@@ -47,7 +50,10 @@ public class BoardController {
     @GetMapping("read")
     public String read(int no , Model model){
         BoardVO boardVO = boardService.selectBoardByNo(no);
+        //게시판 글 하나 + 댓글리스트
+        List<ReplyVO> list = replyService.getReplyByBbsNo(no);
         model.addAttribute("boardVO", boardVO);
+        model.addAttribute("list", list);
         return "board/read";
     }
 
